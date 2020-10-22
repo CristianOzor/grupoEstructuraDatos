@@ -8,7 +8,7 @@ namespace IMC
 {
     class Class1
     {
-        string categoriaIMC(string sexoTipo, double numero)
+        public string categoriaIMC(string sexoTipo, double numero)
         {
             string tipoCategoria = "";
             if (sexoTipo == "F")
@@ -60,7 +60,11 @@ namespace IMC
             }
             return tipoCategoria;
 
+            string status = categoriaIMC("F", 24);
+            Console.WriteLine("Su categoría dentro del IMC es de: {0}", status);
+            Console.ReadLine();
+
         }
-        categoriaIMC("F"; 24);
+        
     }
 }

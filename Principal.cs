@@ -29,6 +29,6 @@ namespace IMC
             double calculoIMC = indiceIMC(peso, altura);
             Console.WriteLine("Su IMC es de {0}", calculoIMC);
             Console.ReadKey();
-        }
+        }   
     }
 }
