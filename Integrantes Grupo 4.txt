@@ -2,3 +2,9 @@ Grupo 4:
 - Cristian Ozor.
 - Agustin Valenzuela.
 - Leandro Strollo.
+
+Propuesta:
+ programa donde el usuario ingrese su nombre, edad, altura, peso, si es hipertenso o no,
+ si es diabetico o no, y el programa calcule el IMC (índice de masa corporal) y le indique
+ el estado en que se encuentra (normal, sobrepeso, etc) y a partir de allí le sugiera una 
+ dieta entre una serie de dietas propuestas.

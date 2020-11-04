@@ -1,0 +1,7 @@
+C:\Users\Estroyin\Desktop\IFTS18\2C 2020\Estructura de Datos\Trabajo Practico Grupal\Trabajo Práctico EDDatos IMC\Trabajo Práctico EDDatos IMC\bin\Debug\Trabajo Práctico EDDatos IMC.exe.config
+C:\Users\Estroyin\Desktop\IFTS18\2C 2020\Estructura de Datos\Trabajo Practico Grupal\Trabajo Práctico EDDatos IMC\Trabajo Práctico EDDatos IMC\bin\Debug\Trabajo Práctico EDDatos IMC.exe
+C:\Users\Estroyin\Desktop\IFTS18\2C 2020\Estructura de Datos\Trabajo Practico Grupal\Trabajo Práctico EDDatos IMC\Trabajo Práctico EDDatos IMC\bin\Debug\Trabajo Práctico EDDatos IMC.pdb
+C:\Users\Estroyin\Desktop\IFTS18\2C 2020\Estructura de Datos\Trabajo Practico Grupal\Trabajo Práctico EDDatos IMC\Trabajo Práctico EDDatos IMC\obj\Debug\Trabajo Práctico EDDatos IMC.csprojAssemblyReference.cache
+C:\Users\Estroyin\Desktop\IFTS18\2C 2020\Estructura de Datos\Trabajo Practico Grupal\Trabajo Práctico EDDatos IMC\Trabajo Práctico EDDatos IMC\obj\Debug\Trabajo Práctico EDDatos IMC.csproj.CoreCompileInputs.cache
+C:\Users\Estroyin\Desktop\IFTS18\2C 2020\Estructura de Datos\Trabajo Practico Grupal\Trabajo Práctico EDDatos IMC\Trabajo Práctico EDDatos IMC\obj\Debug\Trabajo Práctico EDDatos IMC.exe
+C:\Users\Estroyin\Desktop\IFTS18\2C 2020\Estructura de Datos\Trabajo Practico Grupal\Trabajo Práctico EDDatos IMC\Trabajo Práctico EDDatos IMC\obj\Debug\Trabajo Práctico EDDatos IMC.pdb
