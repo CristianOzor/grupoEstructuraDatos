@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -254,6 +255,25 @@ namespace Trabajo_Práctico_EDDatos_IMC
 
                                     if (cIMC.CalculadoraIMC(u) < 18.5)
                                     {
+                                        Stack miPilaBajoPeso = new Stack();
+                                        miPilaBajoPeso.Push("Leche entera y semidesnatada");
+                                        miPilaBajoPeso.Push("Quesos frescos");
+                                        miPilaBajoPeso.Push("Yogurt entero con o sin fruta");
+                                        miPilaBajoPeso.Push("Pollo y pavo, cerdo, ternera, conejo");
+                                        miPilaBajoPeso.Push("Higado");
+                                        miPilaBajoPeso.Push("Pescados Blancos como merluza");
+                                        miPilaBajoPeso.Push("Pescados azules tipo Salmón, Caballa y Sardinas. También Ahumados");
+                                        miPilaBajoPeso.Push("Huevos");
+                                        miPilaBajoPeso.Push("Pan Blanco, pastas, arroces y cereales ");
+                                        miPilaBajoPeso.Push("Verduras y hortalizas");
+                                        miPilaBajoPeso.Push("Palta y aceitunas");
+                                        miPilaBajoPeso.Push("Legumbres");
+                                        miPilaBajoPeso.Push("Frutas y frutos secos");
+                                        miPilaBajoPeso.Push("Aceite de oliva virgen y de otras semillas");
+                                        miPilaBajoPeso.Push("Zumos de frutos y hortalizas");
+
+                                        
+
                                         Console.WriteLine("-------------");
                                         Console.WriteLine(" Categoria = BAJO PESO ");
                                         Console.WriteLine(" Para la informacion que ingresó: ");
@@ -262,9 +282,20 @@ namespace Trabajo_Práctico_EDDatos_IMC
                                         Console.WriteLine("" + u.Nombre + " su IMC es " + cIMC.CalculadoraIMC(u) + "; lo que indica que su peso está en la categoria de BAJO PESO.");
                                         Console.WriteLine(" Malas noticias! Tu peso no es saludable, se encuentra muy delgada/o.");
                                         Console.WriteLine(" Usted deberia realizar una consulta con su medico, para establecer las posibles causas del bajo peso.");
-                                        Console.WriteLine("Gracias por utilizar la calculadora de IMC (Indice de Masa Corporal)");
+                                        Console.WriteLine(" Gracias por utilizar la calculadora de IMC (Indice de Masa Corporal)");
                                         Console.WriteLine("");
                                         Console.WriteLine("-------------");
+
+                                        Console.WriteLine("Dietas recomendadas");
+                                        Console.WriteLine("...............................");
+                                        for (byte i = 0; i < 15; i++)
+                                        {
+                                            string bajoP = (string)miPilaBajoPeso.Pop();
+                                            Console.WriteLine(bajoP);
+                                        }
+                                        Console.WriteLine("...............................");
+                                        Console.ReadKey();
+
                                     }
                                     else if (cIMC.CalculadoraIMC(u) >= 18.5 && cIMC.CalculadoraIMC(u) <= 24.9)
                                     {
@@ -282,6 +313,19 @@ namespace Trabajo_Práctico_EDDatos_IMC
                                     }
                                     else if (cIMC.CalculadoraIMC(u) >= 25 && cIMC.CalculadoraIMC(u) <= 29.9)
                                     {
+                                        Queue miColaPesoAlto = new Queue();
+                                        miColaPesoAlto.Enqueue("Carnes: buey, ternera, caballo, cerdo magro, carnes desgrasadas en general");
+                                        miColaPesoAlto.Enqueue("Aves: pollo, pavo");
+                                        miColaPesoAlto.Enqueue("Pescados, moluscos, crustáceos");
+                                        miColaPesoAlto.Enqueue("Leche desnatada y semidesnatada. Yogures naturales. Quesos frescos desnatados");
+                                        miColaPesoAlto.Enqueue("Verduras en general");
+                                        miColaPesoAlto.Enqueue("Frutas frescas");
+                                        miColaPesoAlto.Enqueue("Café. Té. Infusiones");
+                                        miColaPesoAlto.Enqueue("Aguas minerales");
+                                        miColaPesoAlto.Enqueue("Especias. Condimentos");
+
+                                        
+
                                         Console.WriteLine("-------------");
                                         Console.WriteLine(" Categoria = SOBREPESO ");
                                         Console.WriteLine(" Para la información que ingresó: ");
@@ -293,6 +337,16 @@ namespace Trabajo_Práctico_EDDatos_IMC
                                         Console.WriteLine(" Gracias por utilizar la calculadora de IMC (Indice de Masa Corporal)");
                                         Console.WriteLine("");
                                         Console.WriteLine("-------------");
+
+                                        Console.WriteLine("Dietas recomendadas");
+                                        Console.WriteLine("...............................");
+                                        for (byte i = 0; i < 9; i++)
+                                        {
+                                            string pesoA = (string)miColaPesoAlto.Dequeue();
+                                            Console.WriteLine(pesoA);
+                                        }
+                                        Console.WriteLine("...............................");
+                                        Console.ReadKey();
                                     }
 
                                     else if (cIMC.CalculadoraIMC(u) >= 30 && cIMC.CalculadoraIMC(u) <= 34.9)
