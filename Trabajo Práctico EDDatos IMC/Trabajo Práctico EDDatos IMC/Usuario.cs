@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Trabajo_Práctico_EDDatos_IMC
 {
-    class Usuario
+    class Usuario //Contiene los atributos de los usuarios
     {
         private int id;
         private int dni;

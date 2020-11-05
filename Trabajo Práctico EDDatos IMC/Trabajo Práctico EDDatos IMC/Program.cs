@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Trabajo_Práctico_EDDatos_IMC
 {
-    class Program
+    class Program //Utilizada para ejecutar el menu principal
     {
         static void Main(string[] args)
         {
