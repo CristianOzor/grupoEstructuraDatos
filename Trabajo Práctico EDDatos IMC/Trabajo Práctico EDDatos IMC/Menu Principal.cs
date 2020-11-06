@@ -446,6 +446,33 @@ namespace Trabajo_Práctico_EDDatos_IMC
                                                 sw.Close();
                                             }
                                         }
+                                        //valida si el archivo existe lo sobrescribe
+                                        if (File.Exists(myFile))
+                                        {
+                                            //Se crea el archivo con el nombre indicado. Esta en modo escritura sw
+                                            using (StreamWriter sw = File.CreateText(myFile))
+                                            {
+                                                sw.WriteLine("Información importante para su nutricionista");
+                                                sw.WriteLine("");
+                                                sw.WriteLine("-------------------------------------------------");
+                                                sw.WriteLine("DNI: {0}", u.Dni);
+                                                sw.WriteLine("Apellido: {0}", u.Apellido);
+                                                sw.WriteLine("Nombre: {0}", u.Nombre);
+                                                sw.WriteLine("Edad: {0}", u.Edad);
+                                                sw.WriteLine("Altura: {0}cm", u.Altura);
+                                                sw.WriteLine("Peso: {0}kg", u.Peso);
+                                                sw.WriteLine("IMC: {0}", cIMC.CalculadoraIMC(u));
+                                                sw.WriteLine("Diabetico: {0}", u.Diabetico);
+                                                sw.WriteLine("Hipertenso {0}", u.Hipertenso);
+                                                sw.WriteLine("-------------------------------------------------");
+                                                sw.WriteLine("");
+                                                sw.WriteLine("Nutricionista recomendado");
+                                                sw.WriteLine("Dr. Homero Simpson");
+                                                sw.WriteLine("Av. Siempreviva 742");
+                                                sw.WriteLine("0800-666-DIETA");
+                                                sw.Close();
+                                            }
+                                        }
                                     }
                                     //Atrapa el error de entrada y salida
                                     catch (Exception IO)
