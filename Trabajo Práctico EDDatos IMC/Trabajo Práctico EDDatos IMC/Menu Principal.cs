@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections;
+using System.IO;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -34,12 +35,13 @@ namespace Trabajo_Práctico_EDDatos_IMC
                     Console.WriteLine("4. - MOSTRAR LISTADO DE USUARIOS ");
                     Console.WriteLine("5. - CALCULAR IMC ");
                     Console.WriteLine("6. - RECOMENDAR DIETA ");
-                    Console.WriteLine("7. - SALIR ");
-                    Console.WriteLine("Seleccione la opcion deseada (1 a 7):");
+                    Console.WriteLine("7. - OBTENER COMPROBANTE");
+                    Console.WriteLine("8. - SALIR ");
+                    Console.WriteLine("Seleccione la opcion deseada (1 a 8):");
                     opcion = Convert.ToInt32(Console.ReadLine());
 
                     //SI LA OPCION ES INVALIDA:
-                    if (opcion < 1 || opcion > 7) 
+                    if (opcion < 1 || opcion > 8) 
                     {
                         Console.WriteLine("");
                         Console.WriteLine("-------------------------------------------------------------");
@@ -49,9 +51,9 @@ namespace Trabajo_Práctico_EDDatos_IMC
                     }
 
 
-                } while (opcion <1 || opcion >7);
+                } while (opcion <1 || opcion >8);
 
-                    switch (opcion) {
+                switch (opcion) {
                     case 1: {
                             /*INDICADO PARA INGRESAR UN NUEVO USUARIO*/
 
@@ -60,10 +62,10 @@ namespace Trabajo_Práctico_EDDatos_IMC
 
                             NuevoUsuario.Id = numid++;
                             Console.WriteLine("ID:" + NuevoUsuario.Id);
-                            
+
                             Console.Write("DNI:");
                             NuevoUsuario.Dni = Convert.ToInt32(Console.ReadLine());
-                            
+
                             Console.Write("Nombre:");
                             NuevoUsuario.Nombre = Console.ReadLine();
 
@@ -84,17 +86,17 @@ namespace Trabajo_Práctico_EDDatos_IMC
                                 {
                                     Console.WriteLine(" Por favor, ingrese la letra F: Femenino o M: Masculino");
                                 }
-                            } while (nuevosexo!="F" || nuevosexo != "M"); 
+                            } while (nuevosexo != "F" || nuevosexo != "M");
 
                             Console.Write("Edad (años):");
                             NuevoUsuario.Edad = Convert.ToInt32(Console.ReadLine());
 
                             Console.Write("Altura (cm):");
                             NuevoUsuario.Altura = Convert.ToInt32(Console.ReadLine());
-                           
+
                             Console.Write("Peso (kg):");
                             NuevoUsuario.Peso = Convert.ToInt32(Console.ReadLine());
-                           
+
                             string nuevodiabetico;
                             do
                             {
@@ -130,8 +132,8 @@ namespace Trabajo_Práctico_EDDatos_IMC
 
                             ListaUsuarios.Add(NuevoUsuario);
 
-                                                     
-                            
+
+
                             Console.WriteLine("-------------");
                             Console.WriteLine("");
                             break;
@@ -173,34 +175,34 @@ namespace Trabajo_Práctico_EDDatos_IMC
                                     Console.WriteLine("");
                                 }
 
-                                                             
 
-                              
+
+
 
 
                             }
-                                
 
-                        }                                 
-                                            
-                            break;
-                     
+
+                        }
+
+                        break;
+
                     case 3:
                         {
                             /*INDICADO PARA ELIMINAR EL USUARIO EXISTENTE*/
-                           
+
                             int eliminarid;
                             Console.WriteLine("Ingrese el ID del usuario a eliminar:");
                             eliminarid = Convert.ToInt32(Console.ReadLine());
-                         
+
                             ListaUsuarios.RemoveAll(u => u.Id == eliminarid);
 
-                           
+
                             break;
 
-                            }
+                        }
 
-                            
+
                     case 4:
                         {
                             /*INDICADO PARA MOSTRAR EL LISTADO DE USUARIOS*/
@@ -217,14 +219,14 @@ namespace Trabajo_Práctico_EDDatos_IMC
                                 Console.WriteLine("Diabetico:" + u.Diabetico);
                                 Console.WriteLine("Hipertenso:" + u.Hipertenso);
                                 Console.WriteLine("Edad:" + u.Edad);
-                                
+
                                 CalculoIMC cIMC = new CalculoIMC();
                                 Console.WriteLine("IMC:" + cIMC.CalculadoraIMC(u));
-                                
+
                                 Console.WriteLine("-------------");
                                 Console.WriteLine("");
                             }
-                                break;
+                            break;
                         }
 
                     case 5:
@@ -235,7 +237,7 @@ namespace Trabajo_Práctico_EDDatos_IMC
                             CalculoIMC cIMC = new CalculoIMC();
                             Console.WriteLine("El Indice de Masa Corporal IMC para el usuario seleccionado es:");
                             Console.WriteLine(cIMC.CalculadoraIMC(ListaUsuarios[int.Parse(dato)]));
-                                                                                    
+
                             break;
                         }
                     case 6:
@@ -272,7 +274,7 @@ namespace Trabajo_Práctico_EDDatos_IMC
                                         miPilaBajoPeso.Push("Aceite de oliva virgen y de otras semillas");
                                         miPilaBajoPeso.Push("Zumos de frutos y hortalizas");
 
-                                        
+
 
                                         Console.WriteLine("-------------");
                                         Console.WriteLine(" Categoria = BAJO PESO ");
@@ -324,14 +326,14 @@ namespace Trabajo_Práctico_EDDatos_IMC
                                         miColaPesoAlto.Enqueue("Aguas minerales");
                                         miColaPesoAlto.Enqueue("Especias. Condimentos");
 
-                                        
+
 
                                         Console.WriteLine("-------------");
                                         Console.WriteLine(" Categoria = SOBREPESO ");
                                         Console.WriteLine(" Para la información que ingresó: ");
                                         Console.WriteLine(" Altura:" + u.Altura + " cm "); ;
                                         Console.WriteLine(" Peso:" + u.Peso + " kg ");
-                                        Console.WriteLine(""+ u.Nombre + " su IMC es " + cIMC.CalculadoraIMC(u) + "; lo que indica que su peso está en la categoría de SOBREPESO.");
+                                        Console.WriteLine("" + u.Nombre + " su IMC es " + cIMC.CalculadoraIMC(u) + "; lo que indica que su peso está en la categoría de SOBREPESO.");
                                         Console.WriteLine(" Tené cuidado! Padeces de SOBREPESO, tu salud es moderada.");
                                         Console.WriteLine(" Las personas que tienen sobrepeso o son obesas tienen un mayor riesgo de afecciones crónicas,\n tales como hipertensión arterial, diabetes y colesterol alto.");
                                         Console.WriteLine(" Gracias por utilizar la calculadora de IMC (Indice de Masa Corporal)");
@@ -366,7 +368,7 @@ namespace Trabajo_Práctico_EDDatos_IMC
                                     else if (cIMC.CalculadoraIMC(u) >= 40 && cIMC.CalculadoraIMC(u) < 50)
                                     {
                                         Console.WriteLine("-------------");
-                                        Console.WriteLine(" Categoria = OBESIDAD GRADO 3" );
+                                        Console.WriteLine(" Categoria = OBESIDAD GRADO 3");
                                         Console.WriteLine(" Para la informacion que ingresó: ");
                                         Console.WriteLine(" Altura:" + u.Altura + " cm ");
                                         Console.WriteLine(" Peso:" + u.Peso + " kg ");
@@ -397,11 +399,64 @@ namespace Trabajo_Práctico_EDDatos_IMC
 
                             }
 
-                        }
+                        
 
                             break;
-                        
+                        }
                     case 7:
+                        {
+                            Console.WriteLine("Por favor, ingrese la id del usuario para imprimir su comprobante:");
+                            int iduser = Convert.ToInt32(Console.ReadLine());
+
+                            foreach (Usuario u in ListaUsuarios)
+                            {
+
+                                if (u.Id == iduser)
+                                {
+                                    CalculoIMC cIMC = new CalculoIMC();
+
+                                    string myFile = @"ComprobanteIMC.txt";
+                                    //Se crea una excepción al error input/output para que el programa no se rompa y siga corriendo
+                                    try
+                                    {
+                                        //valida si el archivo no existe lo crea
+                                        if (!File.Exists(myFile)) 
+                                        {
+                                            //Se crea el archivo con el nombre indicado. Esta en modo escritura sw
+                                            using (StreamWriter sw = File.CreateText(myFile))
+                                            {
+                                                sw.WriteLine("Información importante para su nutricionista");
+                                                sw.WriteLine("");
+                                                sw.WriteLine("-------------------------------------------------");
+                                                sw.WriteLine("DNI: {0}", u.Dni);
+                                                sw.WriteLine("Apellido: {0}", u.Apellido);
+                                                sw.WriteLine("Nombre: {0}", u.Nombre);
+                                                sw.WriteLine("Edad: {0}", u.Edad);
+                                                sw.WriteLine("Altura: {0}cm", u.Altura);
+                                                sw.WriteLine("Peso: {0}kg", u.Peso);
+                                                sw.WriteLine("IMC: {0}", cIMC.CalculadoraIMC(u));
+                                                sw.WriteLine("Diabetico: {0}", u.Diabetico);
+                                                sw.WriteLine("Hipertenso {0}", u.Hipertenso);
+                                                sw.WriteLine("-------------------------------------------------");
+                                                sw.WriteLine("");
+                                                sw.WriteLine("Nutricionista recomendado");
+                                                sw.WriteLine("Dr. Homero Simpson");
+                                                sw.WriteLine("Av. Siempreviva 742");
+                                                sw.WriteLine("0800-666-DIETA");
+                                                sw.Close();
+                                            }
+                                        }
+                                    }
+                                    catch (Exception IO)
+                                    {
+                                        Console.WriteLine("Error al manipular el archivo " + IO.Message);
+                                    }
+                                }
+                                    
+                            }
+                            break;
+                        }
+                    case 8:
                         {
                             /*INDICADO PARA SALIR DEL PROGRAMA*/
 
@@ -415,7 +470,7 @@ namespace Trabajo_Práctico_EDDatos_IMC
 
 
 
-            } while (opcion !=7);
+            } while (opcion !=8);
         
         }
     }
