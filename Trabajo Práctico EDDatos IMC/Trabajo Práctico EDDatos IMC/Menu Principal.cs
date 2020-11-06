@@ -447,6 +447,7 @@ namespace Trabajo_Práctico_EDDatos_IMC
                                             }
                                         }
                                     }
+                                    //Atrapa el error de entrada y salida
                                     catch (Exception IO)
                                     {
                                         Console.WriteLine("Error al manipular el archivo " + IO.Message);
